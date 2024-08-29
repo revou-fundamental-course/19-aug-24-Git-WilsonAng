@@ -7,56 +7,118 @@
     <link rel="stylesheet" href="css\style.css" />
   </head>
   <body>
-    <nav>
-      <header>
-        <div class="logo-icon"></div>
-      </header>
+    <!-- Pop Up Inputan Nama -->
+    <div class="popup_name">
+      <div class="popup_box">
+        <h2>Welcome to My Website</h2>
+        <p>Please input your name?</p>
+        <input id="myName" type="text" placeholder="Enter your name . . ." />
+        <button type="button" class="ok" onclick="ok()">OK</button>
+      </div>
+    </div>
 
-      <section class="nav-container">
-        <a href="#" class="nav-item">Home</a>
-        <a href="#our-profile" class="nav-item">Our Profile</a>
-        <a href="#" class="nav-item">Achivement</a>
-        <a href="#" class="nav-item">Message Us</a>
-      </section>
-    </nav>
+    <!-- Membuat Navigasi Bar Responsive -->
+    <div class="navHeader">
+      <div class="logo-icon"></div>
+      <div class="menu-icon">
+        <div class="line"><hr /></div>
+        <div class="line"><hr /></div>
+        <div class="line"><hr /></div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="#home" class="active">Home</a>
+          </li>
+          <li>
+            <a href="#our-roles">Our Roles</a>
+          </li>
+          <li>
+            <a href="#message-us">Message Us</a>
+          </li>
+          <li>
+            <a href="#footer">Footer</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-    <hr />
+    <!-- Membuat Main Content -->
+    <main class="main-content">
+      <h1 id="welcome"></h1>
+      <p>Selamat datang di RevoU</p>
 
-    <main>
-      <article>
+      <!-- Membuat Slide -->
+      <div>
+        <img class="img-slideshow" src="../assets/1.jfif" />
+        <img class="img-slideshow" src="../assets/2.jpg" />
+        <img class="img-slideshow" src="../assets/3.jpg" />
+        <div class="btnSlide">
+          <button onclick="plusDivs(-1)">Previous</button>
+          <button onclick="plusDivs(1)">Next</button>
+        </div>
+      </div>
+
+      <section class="bg-section">
         <header>
-          <h1>Welcome user, to our website</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div class="banner-img"></div>
+          <h1 id="our-roles">OUR ROLES</h1>
         </header>
-      </article>
-      <section id="our-profile">
-        <header>
-          <h1>Our Profile</h1>
-          <section class="profile-container">
-            <div class="profile-item">
-              <div class="profile-img"></div>
-              <h2>Software Engineer</h2>
-            </div>
-            <div class="profile-item">
-              <div class="profile-img"></div>
-              <h2>Software Engineer</h2>
-            </div>
-            <div class="profile-item">
-              <div class="profile-img"></div>
-              <h2>Software Engineer</h2>
-            </div>
-          </section>
-        </header>
+
+        <section class="profile-container">
+          <div class="profile-item">
+            <div class="profile-img"></div>
+            <h2>Full Stack Development</h2>
+          </div>
+
+          <div class="profile-item">
+            <div class="profile-img"></div>
+            <h2>Front End Engineer</h2>
+          </div>
+
+          <div class="profile-item">
+            <div class="profile-img"></div>
+            <h2>Back End Engineer</h2>
+          </div>
+        </section>
       </section>
-      <section>
-        <form action=""></form>
-        <div></div>
-      </section>
+
+      <div class="message">
+        <div class="form-section" id="message-us">
+          <form name="message-form" onsubmit="return validateForm()">
+            Nama: <input placeholder="Nama" type="text" name="full-name" />
+            <br />
+
+            Tanggal Lahir:
+            <input type="date" name="birth-date" />
+            <br />
+
+            Jenis Kelamin:
+            <input type="radio" id="male" name="gender" value="Laki-laki" />
+            <label for="male">Laki-laki</label>
+            <input type="radio" id="female" name="gender" value="Perempuan" />
+            <label for="female">Perempuan</label>
+            <br />
+
+            Pesan:
+            <textarea placeholder="Pesan" name="messages"></textarea>
+            <br />
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div class="form-output">
+          <p>Nama: <span id="sender-full-name"></span></p>
+          <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
+          <p>Jenis Kelamin: <span id="sender-gender"></span></p>
+          <p>Pesan: <span id="sender-messages"></span></p>
+        </div>
+      </div>
     </main>
 
-    <footer style="text-align: end">
-      <p>Created by Wilson-Ang</p>
+    <footer id="footer">
+      <p>Created by Wilson</p>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

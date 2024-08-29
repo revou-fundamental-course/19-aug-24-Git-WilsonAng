@@ -1,10 +1,151 @@
-/* Ini Css */
-nav {
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Menampilkan pop up Nama */
+.popup_name {
+  z-index: 999;
+  position: fixed;
+  backdrop-filter: blur(30px);
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
+.popup_box {
+  position: relative;
+  background-color: antiquewhite;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 20px;
+}
+
+.popup_box h2 {
+  font-size: 2.1em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.popup_box p {
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
+.ok {
+  color: white;
+  background-color: dodgerblue;
+  padding: 5px 20px;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+/* selesai css popup nama */
+
+/* Membuat Navigasi */
+.navHeader {
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-bar ul li a {
+  display: block;
+  color: white;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.nav-bar ul li a:hover {
+  color: black;
+  background: white;
+}
+
+.nav-bar ul li a.active {
+  color: black;
+  background: white;
+}
+/* selesai membuat css navigasi */
+
+/* membuat responsive screen */
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+  }
+
+  .nav-bar {
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: black;
+    transition: 0.2s;
+    overflow: hidden;
+  }
+
+  .nav-bar.active {
+    height: 450px;
+  }
+
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+  }
+}
+
+/* membuat css our roles */
 .logo-icon {
   height: 48px;
   width: 48px;
@@ -13,25 +154,24 @@ nav {
   border-radius: 50%;
 }
 
-.nav-item {
-  border: 1px solid;
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 8px;
-}
-
-.nav-container {
-  display: flex;
-}
-
 .banner-img {
   height: 300px;
-  background-image: url(https://lipsum.app/random/1600x900);
   background-size: cover;
   background-position: center;
+}
+
+.img-slideshow {
+  width: 100%;
+  height: 900px;
+}
+
+#welcome {
+  text-transform: capitalize;
+}
+
+.btnSlide {
+  text-align: center;
+  padding: 10px;
 }
 
 .profile-container {
@@ -51,4 +191,28 @@ nav {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
+}
+
+.bg-section {
+  background-color: aqua;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+/* css form message us. Maap ga sempat */
+.message {
+  display: flex;
+  align-items: center;
+}
+
+/* css untuk footer */
+footer {
+  text-align: end;
+  background: black;
+  color: white;
+  height: 50px;
+  padding: 20px;
 }
